@@ -1,0 +1,175 @@
+[
+  {
+    "name": "Shoulder Workout",
+    "description": "The best shoulder workout routine",
+    "workout_plan": {
+      "goal": "muscle gain",
+      "user_profile": {
+        "age": 59,
+        "weight": "170 lbs",
+        "experience_level": "intermediate",
+        "activity_level": "moderate"
+      },
+      "weekly_schedule": {
+        "days_per_week": 4,
+        "workout_days": [
+          "Monday",
+          "Wednesday",
+          "Friday",
+          "Saturday"
+        ]
+      }
+    },
+    "workouts": [
+      {
+        "day": "Monday",
+        "focus": "Upper Body",
+        "exercises": [
+          {
+            "name": "Bench Press",
+            "sets": 4,
+            "reps": 8,
+            "rest": "90 seconds"
+          },
+          {
+            "name": "Bent Over Rows",
+            "sets": 4,
+            "reps": 8,
+            "rest": "90 seconds"
+          },
+          {
+            "name": "Overhead Dumbbell Press",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Pull-Ups (Assisted if needed)",
+            "sets": 3,
+            "reps": 6,
+            "rest": "90 seconds"
+          },
+          {
+            "name": "Bicep Curls",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Tricep Dips (Bench)",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          }
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "focus": "Lower Body",
+        "exercises": [
+          {
+            "name": "Squats",
+            "sets": 4,
+            "reps": 8,
+            "rest": "90 seconds"
+          },
+          {
+            "name": "Deadlifts",
+            "sets": 4,
+            "reps": 8,
+            "rest": "90 seconds"
+          },
+          {
+            "name": "Leg Press",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Leg Curls",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Calf Raises",
+            "sets": 4,
+            "reps": 12,
+            "rest": "60 seconds"
+          }
+        ]
+      },
+      {
+        "day": "Friday",
+        "focus": "Full Body",
+        "exercises": [
+          {
+            "name": "Deadlifts",
+            "sets": 3,
+            "reps": 8,
+            "rest": "90 seconds"
+          },
+          {
+            "name": "Push-Ups",
+            "sets": 4,
+            "reps": 8,
+            "rest": "90 seconds"
+          },
+          {
+            "name": "Lateral Raises",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Lunges",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Plank",
+            "sets": 3,
+            "duration": "30-60 seconds",
+            "rest": "60 seconds"
+          }
+        ]
+      },
+      {
+        "day": "Saturday",
+        "focus": "Accessory Work & Cardio",
+        "exercises": [
+          {
+            "name": "Dumbbell Shoulder Press",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Face Pulls",
+            "sets": 3,
+            "reps": 12,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Core Work (e.g., Russian Twists)",
+            "sets": 3,
+            "reps": 15,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "30-Minute Moderate Intensity Cardio (e.g., cycling, walking)",
+            "duration": "30 minutes"
+          }
+        ]
+      }
+    ],
+    "notes": [
+      "**Progressive Overload**: Aim to gradually increase weights or reps every 2-4 weeks to promote muscle growth.",
+      "**Nutrition**: Focus on a balanced diet rich in protein, complex carbohydrates, and healthy fats. Consider protein supplementation if you're struggling to meet your daily requirement.",
+      "**Hydration**: Stay hydrated throughout the day, especially before and after workouts.",
+      "**Recovery**: Listen to your body. Ensure proper rest days to prevent overtraining, and consider incorporating foam rolling or massages to aid recovery.",
+      "**Consult a Physician**: Given your age, it may be beneficial to consult a physician before starting any new workout program, especially if you have pre-existing health conditions."
+    ]
+  }
+]

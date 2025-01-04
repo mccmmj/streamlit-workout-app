@@ -26,25 +26,25 @@ DATABASE_URL="sqlite:///data/workout.db"
 streamlit run app.py
 
 # Operation
-The app is minimal.  Three screens, home, workout routines, and workout generator.
-Home:
-The Home screen allows you to select a user profile
-
-Workout Routines:
-The Workout Routines screen allows you to select the range of workout routines in the database.
-
-Workout Generator:
+The app is minimal.  Three screens, `Home`, `Workout Routines`, and `Workout Generator`.  
+`Home`:  
+The Home screen allows you to select a user profile  
+  
+`Workout Routines`:  
+The Workout Routines screen allows you to select the range of workout routines in the database.  
+  
+`Workout Generator`:  
 The Workout Generator screen allows you to specify any workout conditions  you have and 
 input a prompt.
+  
+Example of notes are:  
+    `I have no injuries`  
+    `I prefer free weights`  
+    `I don't like lunges`  
 
-Example of notes are:
-    "I have no injuries"
-    "I prefer free weights"
-    "I don't like lunges"
-
-Examples of prompts are:
-   "What is the best legs workout routine for me?",
-   "What is the best core workout routine for me?"
+Examples of prompts are:  
+   `What is the best legs workout routine for me?`,  
+   `What is the best core workout routine for me?`  
 
 # Miscellany
 Add support for user management.  

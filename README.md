@@ -12,12 +12,15 @@ pipenv --python 3.12
 pipenv run poetry install
 
 # Configuration
-Create .env file with the following content:
-    ANTHROPIC_API_KEY=<your anthropic api key>
-    OPENAI_API_KEY=<your openai api key>
-    API_PROVIDER=OPENAI # ANTHROPIC|OPENAI
-    LOG_LEVEL=INFO
-    DATABASE_URL="sqlite:///data/workout.db"
+Create `.env` file with the following content:  
+```
+ANTHROPIC_API_KEY=<your anthropic api key>
+OPENAI_API_KEY=<your openai api key>
+API_PROVIDER=OPENAI # ANTHROPIC|OPENAI
+LOG_LEVEL=INFO
+DATABASE_URL="sqlite:///data/workout.db"
+```
+> Currently only API_PROVIDER=OPENAI is supported
 
 # Execution
 streamlit run app.py
@@ -44,7 +47,7 @@ Examples of prompts are:
    "What is the best core workout routine for me?"
 
 # Miscellany
-Add support for user management.
-Add Screens for exercises and data entry
-Add more agents to support exercise tracking, analysis and charts.
-Replace streamlit with React-native or other mobile app framework.
+Add support for user management.  
+Add Screens for exercises and data entry.  
+Add more agents to support exercise tracking, analysis and charts.  
+Replace streamlit with React-native or other mobile app framework.  

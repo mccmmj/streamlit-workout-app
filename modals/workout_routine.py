@@ -1,25 +1,39 @@
 import logging
+import json
 
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 
 import streamlit as st
 
 from utils import db_utils
 
-from database import EngineSingleton
-from models.workout_routine import (
+from database import (
+    EngineSingleton,
+    upsert_workout_routine_all,
+)
+from models import (
     WorkoutRoutine as WorkoutRoutineModel,
 )
 
 log = logging.getLogger(__name__)
 engine = EngineSingleton.get_instance()
 
+def sanitize_json_data(json_data):
+    try:
+        json.loads(json_data)
+        return json_data
+    except json.JSONDecodeError as e:
+        log.info("error sanitizing json: %r", e)
+        sanitized_data = json_data.replace("\\", "'")
+        return sanitize_json_data(sanitized_data)
+
 
 @st.dialog("Accept or Reject Workout Routine")
 def accept_or_reject_workout_routine(json_data):
-    logging.debug("In accept_or_reject_workout_routine: %r", json_data)
+    sanitized_json = sanitize_json_data(json_data)
+    logging.debug("In accept_or_reject_workout_routine: %r", sanitized_json)
     # Parse JSON into WorkoutRoutine model
-    wr_model = WorkoutRoutineModel.model_validate(json_data)
+    wr_model = WorkoutRoutineModel.model_validate_json(sanitized_json)
 
     # Streamlit UI logic
     st.title("Workout Routine Review")
@@ -27,8 +41,11 @@ def accept_or_reject_workout_routine(json_data):
     with st.expander("Workout Plan Details", expanded=True):
         st.write(f"**Goal:** {wr_model.workout_plan.goal}")
         user_profile = wr_model.workout_plan.user_profile
-        st.write(f"**User Profile:** Age {user_profile.age}, Weight {user_profile.weight}, "
-                 f"Experience Level {user_profile.experience_level}, Activity Level {user_profile.activity_level}")
+        st.write(
+            f"**User Profile:** "
+            f"Name {user_profile.name}, Age {user_profile.age}, Gender {user_profile.gender}, Weight {user_profile.weight}, "
+            f"Experience Level {user_profile.experience_level}, Activity Level {user_profile.activity_level}"
+        )
         schedule = wr_model.workout_plan.weekly_schedule
         st.write(f"**Weekly Schedule:** {schedule.days_per_week} days per week on {', '.join(schedule.workout_days)}")
 
@@ -47,10 +64,10 @@ def accept_or_reject_workout_routine(json_data):
     with col1:
         if st.button("Accept"):
             # Save to database if accepted
-            SessionLocal = sessionmaker(bind=engine)
-            session = SessionLocal()
-            wr_db = db_utils.get_workout_routine(wr_model)
-            wr_db = db_utils.create_workout_routine(session, wr_db)
+            with Session(engine) as session:
+                # wr_db = db_utils.create_workout_routine(session, wr_model)
+                upsert_workout_routine_all(session, wr_model)
+                session.commit()
 
             st.success("Workout routine accepted and saved!")
             st.rerun()

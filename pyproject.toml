@@ -17,6 +17,7 @@ anthropic = "^0.42.0"
 python-dotenv = "^1.0.1"
 streamlit-pydantic = "^0.6.0"
 sqlalchemy = "^2.0.36"
+coloredlogs = "^15.0.1"
 
 
 [build-system]

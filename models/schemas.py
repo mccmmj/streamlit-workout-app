@@ -8,8 +8,10 @@ class FlexibleModel(RootModel[Dict[str, str]]):
 
 # UserProfile Schema
 class UserProfileBase(BaseModel):
+    name: str
     age: int
     weight: str
+    gender: str
     experience_level: str
     activity_level: str
 
@@ -22,6 +24,42 @@ class UserProfile(UserProfileBase):
     id: int | None = None
 
     model_config = ConfigDict(from_attributes=True)
+
+# Goal Schema
+class GoalBase(BaseModel):
+    text: str
+    choices: List[str]
+
+
+class GoalCreate(GoalBase):
+    pass
+
+
+class Goal(GoalBase):
+    id: int | None = None
+
+    model_config = ConfigDict(from_attributes=True)
+
+    def __repr__(self) -> str:
+        return f"Goal(id={self.id!r}, text={self.text!r}, choices={self.choices!r})"
+
+
+# Note Schema
+class NoteBase(BaseModel):
+    text: str
+
+
+class NoteCreate(NoteBase):
+    pass
+
+
+class Note(NoteBase):
+    id: int | None = None
+
+    model_config = ConfigDict(from_attributes=True)
+
+    def __repr__(self) -> str:
+        return f"Note(id={self.id!r}, text={self.text!r})"
 
 
 # WeeklySchedule Schema

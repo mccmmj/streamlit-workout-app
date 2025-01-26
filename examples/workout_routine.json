@@ -1,0 +1,133 @@
+{
+    "name": "Jerry's Back Workout Routine",
+    "description": "A customized back workout routine for Jerry, focusing on muscle gain while avoiding lunges and incorporating free weights.",
+    "workout_plan": {
+        "goal": "Muscle Gain",
+        "user_profile": {
+            "name": "Jerry",
+            "age": 59,
+            "weight": "170 lbs",
+            "gender": "Male",
+            "experience_level": "Intermediate",
+            "activity_level": "Moderate"
+        },
+        "weekly_schedule": {
+            "days_per_week": 3,
+            "workout_days": [
+                "Monday",
+                "Wednesday",
+                "Friday"
+            ]
+        }
+    },
+    "workouts": [
+        {
+            "day": "Monday",
+            "focus": "Back and Biceps",
+            "exercises": [
+                {
+                    "name": "Deadlifts",
+                    "sets": 4,
+                    "reps": 6,
+                    "rest": "2 minutes"
+                },
+                {
+                    "name": "Bent-over Barbell Rows",
+                    "sets": 4,
+                    "reps": 8,
+                    "rest": "90 seconds"
+                },
+                {
+                    "name": "Pull-ups",
+                    "sets": 3,
+                    "reps": 8,
+                    "rest": "90 seconds"
+                },
+                {
+                    "name": "Single-arm Dumbbell Rows",
+                    "sets": 3,
+                    "reps": 10,
+                    "rest": "90 seconds"
+                },
+                {
+                    "name": "Face Pulls with Rope Attachment",
+                    "sets": 3,
+                    "reps": 12,
+                    "rest": "60 seconds"
+                }
+            ]
+        },
+        {
+            "day": "Wednesday",
+            "focus": "Legs and Core (with back support)",
+            "exercises": [
+                {
+                    "name": "Barbell Squats",
+                    "sets": 4,
+                    "reps": 8,
+                    "rest": "2 minutes"
+                },
+                {
+                    "name": "Romanian Deadlifts",
+                    "sets": 3,
+                    "reps": 10,
+                    "rest": "90 seconds"
+                },
+                {
+                    "name": "Seated Cable Rows",
+                    "sets": 3,
+                    "reps": 12,
+                    "rest": "90 seconds"
+                },
+                {
+                    "name": "Plank",
+                    "sets": 3,
+                    "reps": null,
+                    "rest": "60 seconds"
+                }
+            ]
+        },
+        {
+            "day": "Friday",
+            "focus": "Back and Shoulders",
+            "exercises": [
+                {
+                    "name": "Pull-ups",
+                    "sets": 3,
+                    "reps": 8,
+                    "rest": "90 seconds"
+                },
+                {
+                    "name": "Lat Pulldowns",
+                    "sets": 3,
+                    "reps": 10,
+                    "rest": "90 seconds"
+                },
+                {
+                    "name": "Dumbbell Shrugs",
+                    "sets": 3,
+                    "reps": 12,
+                    "rest": "60 seconds"
+                },
+                {
+                    "name": "Barbell Overhead Press",
+                    "sets": 3,
+                    "reps": 8,
+                    "rest": "90 seconds"
+                },
+                {
+                    "name": "Standing T-Bar Row",
+                    "sets": 3,
+                    "reps": 10,
+                    "rest": "90 seconds"
+                }
+            ]
+        }
+    ],
+    "notes": [
+        "Focus on proper form to prevent injury, especially with deadlifts and rows.",
+        "Incorporate a warm-up routine before starting your workout to prepare your muscles and joints.",
+        "Stay hydrated and consider a protein-rich snack post-workout to aid in muscle recovery."
+    ],
+    "id": null
+}

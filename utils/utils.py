@@ -1,9 +1,14 @@
 import os
 import logging
+import coloredlogs
 
+from config.settings import settings
+from utils.log_formatter import ColoredFormatter
+
+logger = logging.getLogger(__name__)
 
 def get_log_level():
-    loglev = os.getenv("LOG_LEVEL", "INFO")
+    loglev = settings.LOG_LEVEL
     return logging.DEBUG if loglev == "DEBUG" else \
         logging.INFO if loglev == "INFO" else \
         logging.WARN if loglev == "WARN" else \
@@ -12,9 +17,18 @@ def get_log_level():
 
 def setup_logging():
 
+    # logger.setLevel(get_log_level())
+    #
+    # handler = logging.StreamHandler()
+    # handler.setFormatter(ColoredFormatter())
+    #
+    # logger.addHandler(handler)
+
+    coloredlogs.install(level='DEBUG')
+
     logging.basicConfig(
         level=get_log_level(),
-        format="%(asctime)s = %(levelname)s = %(message)s"
+        format="%(asctime)s : %(levelname)s : %(message)s"
     )
 
 
@@ -25,5 +39,3 @@ class SingletonMeta(type):
         if cls not in cls._instances:
             cls._instances[cls] = super().__call__(*args, **kwargs)
         return cls._instances[cls]
-
-

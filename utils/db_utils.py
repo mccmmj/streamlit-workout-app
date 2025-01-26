@@ -1,7 +1,7 @@
 import json
 import logging
 
-from database.workout_routine_db import (
+from database import (
     UserProfile,
     WeeklySchedule,
     WorkoutPlan,
@@ -9,7 +9,7 @@ from database.workout_routine_db import (
     Workout,
     WorkoutRoutine
 )
-from models.workout_routine import (
+from models import (
     UserProfileBase,
     WeeklyScheduleBase,
     WorkoutPlanBase,
@@ -17,7 +17,7 @@ from models.workout_routine import (
     WorkoutBase,
     WorkoutRoutineBase,
 )
-from models.workout_routine import (
+from models import (
     UserProfile as UserProfileModel,
     WeeklySchedule as WeeklyScheduleModel,
     WorkoutPlan as WorkoutPlanModel,
@@ -38,8 +38,10 @@ def get_workout_routines(file_path: str) -> list:
 
 def get_user_profile(user_profile: UserProfileBase) -> UserProfile:
     return UserProfile(
+        name=user_profile.name,
         age=user_profile.age,
         weight=user_profile.weight,
+        gender=user_profile.gender,
         experience_level=user_profile.experience_level,
         activity_level=user_profile.activity_level
     )

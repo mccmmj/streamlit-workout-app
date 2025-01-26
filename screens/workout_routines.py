@@ -1,28 +1,25 @@
 import logging
 
 from typing import Dict 
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import select
+from sqlalchemy.orm import Session
 
 import streamlit as st
 
 from utils import db_utils
 
 from database import EngineSingleton
-from database.workout_routine_db import (
-    WorkoutRoutine
-)
-from models.workout_routine import (
-    WorkoutRoutine as WorkoutRoutineModel,
-)
+from database import WorkoutRoutine
+from models import WorkoutRoutine as WorkoutRoutineModel
 
 log = logging.getLogger(__name__)
 engine = EngineSingleton.get_instance()
-SessionLocal = sessionmaker(bind=engine)
-session = SessionLocal()
+session = Session(engine)
 
 # Fetch all saved workouts from the database
 workout_routines: Dict[int, WorkoutRoutineModel] = {}
-for wr in session.query(WorkoutRoutine).all():
+stmt = select(WorkoutRoutine)
+for wr in session.scalars(stmt).all():
     print(f"{wr=}")
     res = db_utils.get_workout_routine_model(wr)
     print(f"{res=}")
@@ -49,8 +46,10 @@ else:
 
         with st.expander("User Profile", expanded=True):
             user_profile = workout_routine.workout_plan.user_profile
+            st.write(f"**Name:** {user_profile.name}")
             st.write(f"**Age:** {user_profile.age}")
             st.write(f"**Weight:** {user_profile.weight}")
+            st.write(f"**Gender:** {user_profile.gender}")
             st.write(f"**Experience Level:** {user_profile.experience_level}")
             st.write(f"**Activity Level:** {user_profile.activity_level}")
 

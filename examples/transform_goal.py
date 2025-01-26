@@ -5,8 +5,8 @@ from sqlalchemy.orm import Session
 
 from utils import setup_logging
 from database import EngineSingleton, setup_db
-from database import UserProfile
-from models import UserProfile as UserProfileModel
+from database import Goal
+from models import Goal as GoalModel
 
 setup_logging()
 
@@ -17,11 +17,11 @@ log = logging.getLogger(__name__)
 
 session = Session(engine)
 
-stmt = select(UserProfile)
+stmt = select(Goal)
 print(stmt)
 result = session.execute(stmt)
 print(f"{result=}")
 print(result.all())
-for user_profile_obj in result.all():
-    userProfileModel = UserProfileModel.model_validate(user_profile_obj)
-    log.info("userProfileModel=%r", userProfileModel)
+for goal_obj in result.all():
+    goalModel = GoalModel.model_validate(goal_obj)
+    log.info("goalModel=%r", goalModel)
